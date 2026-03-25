@@ -20,6 +20,10 @@ Built by analysts, for analysts. ThreadHunter enriches raw UAL exports with GeoI
 
 ---
 
+<img width="1398" height="811" alt="Screenshot 2026-03-25 at 8 43 01 pm" src="https://github.com/user-attachments/assets/0623cfa5-39f2-4605-8992-145afa502e6d" />
+
+---
+
 ## Features
 
 | | Feature | Description |
