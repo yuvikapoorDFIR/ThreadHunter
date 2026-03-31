@@ -1,51 +1,55 @@
 <div align="center">
 
-# 🔍 ThreadHunter
+<img src="https://github.com/user-attachments/assets/0623cfa5-39f2-4605-8992-145afa502e6d" alt="ThreadHunter" width="420"/>
 
-### BEC Forensics Platform
+# ThreadHunter
 
-**A desktop DFIR tool for investigating Microsoft 365 Unified Audit Log data**
+**Forensic-grade BEC investigation platform for Microsoft 365 Unified Audit Log analysis**
 
-Built by analysts, for analysts. ThreadHunter enriches raw UAL exports with GeoIP data, surfaces impossible travel, detects IOCs, and generates investigation reports — entirely on your local machine.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS-lightgrey)]()
-
----
-
-[Features](#features) · [Quick Start](#quick-start) · [Downloads](#downloads) · [Data & Privacy](#data--privacy) · [Contributing](#contributing)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![DFIR](https://img.shields.io/badge/Use%20Case-DFIR%20%7C%20BEC-E95555?style=flat-square)]()
+[![Author](https://img.shields.io/badge/Author-Yuvi%20Kapoor-2EAD7A?style=flat-square)](https://linkedin.com/in/yuvi-kapoor-5a38521a5)
 
 </div>
 
 ---
 
-<img width="1398" height="811" alt="Screenshot 2026-03-25 at 8 43 01 pm" src="https://github.com/user-attachments/assets/0623cfa5-39f2-4605-8992-145afa502e6d" />
+## Overview
+
+**ThreadHunter** is a desktop DFIR platform built for investigating Microsoft 365 Unified Audit Log data during Business Email Compromise engagements. It enriches raw UAL exports with GeoIP data, surfaces impossible travel, detects IOCs, and generates self-contained investigation reports — entirely on your local machine.
+
+Built by [Yuvi Kapoor](https://linkedin.com/in/yuvi-kapoor-5a38521a5) at **CyberClan DFIR**.
 
 ---
 
 ## Features
 
-| | Feature | Description |
-|---|---|---|
-| 📥 | **UAL Ingestion** | Load raw M365 UAL exports (CSV or XLSX) |
-| 🔍 | **AuditData Parsing** | Extracts ClientIP, AppId, SessionId, UserAgent, UniqueTokenId from nested JSON with parallel processing |
-| 🌍 | **GeoIP Enrichment** | Country / City / ASN / Organisation via MaxMind GeoLite2 — fully offline |
-| 🗺️ | **Live Tile Map** | Scrollable world map with clickable markers, cluster counts, and location detail panel |
-| ✈️ | **Impossible Travel** | Detects same-account logins from different countries within a configurable time window |
-| 🔎 | **IOC Filter** | Match across IP, SessionId, UserAgent, and UniqueTokenId simultaneously |
-| 📊 | **Summary Dashboard** | Top operations, IPs, users, and countries with country flag images and bar charts |
-| 📋 | **Data Table** | Sortable columns, full-text search, double-click row detail with raw AuditData JSON |
-| 📄 | **HTML Report** | Self-contained investigation report with impossible travel, IOCs, and analyst notes |
-| 🗂️ | **Case Management** | SQLite-backed `.threadhunter` case files — metadata, events, IOCs, and notes in one file |
-| 🎨 | **Dark / Light Theme** | Toggle at any time without restarting |
-| 💾 | **Export** | Save filtered or full data to CSV or Excel |
+- **UAL ingestion** — load raw M365 UAL exports (CSV or XLSX)
+- **AuditData parsing** — extracts ClientIP, AppId, SessionId, UserAgent, and UniqueTokenId from nested JSON with parallel processing
+- **GeoIP enrichment** — Country / City / ASN / Organisation via MaxMind GeoLite2 — fully offline
+- **Live tile map** — scrollable world map with clickable markers, cluster counts, and location detail panel
+- **Impossible travel detection** — flags same-account logins from different countries within a configurable time window
+- **IOC filter** — match across IP, SessionId, UserAgent, and UniqueTokenId simultaneously
+- **Summary dashboard** — top operations, IPs, users, and countries with flag images and bar charts
+- **Data table** — sortable columns, full-text search, double-click row detail with raw AuditData JSON
+- **HTML report export** — self-contained investigation report with impossible travel, IOCs, and analyst notes
+- **Case management** — SQLite-backed `.threadhunter` case files; metadata, events, IOCs, and notes in one file
+- **Dark / Light theme** — toggle at any time without restarting
+- **Export** — save filtered or full data to CSV or Excel
+
+---
+
+## Screenshots
+
+> _Add screenshots of the application here_
 
 ---
 
 ## Downloads
 
-> Download the version for your operating system. No installer required — unzip and run.
+> No installer required — unzip and run.
 
 | Platform | Download | Requirements |
 |---|---|---|
@@ -54,9 +58,9 @@ Built by analysts, for analysts. ThreadHunter enriches raw UAL exports with GeoI
 
 ---
 
-## Quick Start
+## Installation
 
-### 1. Install Python dependencies
+### 1. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -70,7 +74,7 @@ Register at [maxmind.com](https://www.maxmind.com/en/geolite2/signup) and downlo
 
 Place them anywhere — ThreadHunter lets you browse to them at runtime and remembers the paths between sessions.
 
-> GeoLite2 databases cannot be bundled in this repository under MaxMind's licence. All lookups happen locally — no IP data is ever sent to MaxMind.
+> GeoLite2 databases cannot be bundled in this repository under MaxMind's licence. All lookups happen locally — no IP data is ever sent to MaxMind. If MaxMind registration is not possible, [DB-IP Lite](https://db-ip.com/db/lite.php) databases are compatible and available under Creative Commons with no registration.
 
 ### 3. Export a UAL from Microsoft 365
 
@@ -95,26 +99,34 @@ python main.py path/to/MyCase.threadhunter
 
 ---
 
-## Platform Notes
+## Dependencies
 
-### Windows
-Works out of the box with standard Python from [python.org](https://www.python.org/downloads/). Use the `ThreadHunter_Windows_v1.0.zip` release.
+| Package | Purpose |
+|---|---|
+| `customtkinter` | Modern themed GUI framework |
+| `polars` | High-performance DataFrame operations |
+| `Pillow` | Logo, icon, and flag image rendering |
+| `maxminddb` | GeoLite2 database lookups |
+| `tldextract` | Domain extraction from URLs and email addresses |
 
-### macOS
-- Install Python from **[python.org](https://www.python.org/downloads/)** — not Homebrew. The python.org installer bundles a more reliable version of Tk
-- If the app opens behind other windows on first launch, click the ThreadHunter icon in the Dock
-- Use the `ThreadHunter_Mac_v1.0.zip` release
+---
 
-### Linux
+## Usage
+
+### Platform Notes
+
+**Windows** — works out of the box with standard Python from [python.org](https://www.python.org/downloads/).
+
+**macOS** — install Python from [python.org](https://www.python.org/downloads/), not Homebrew. The python.org installer bundles a more reliable version of Tk. If the app opens behind other windows on first launch, click the ThreadHunter icon in the Dock.
+
+**Linux:**
 ```bash
 sudo apt install python3-tk   # Ubuntu/Debian
 pip install -r requirements.txt
 python main.py
 ```
 
----
-
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 | Shortcut | Action |
 |---|---|
@@ -125,9 +137,7 @@ python main.py
 | `Ctrl+I` | IOC Filter |
 | `Ctrl+U` | Summary |
 
----
-
-## Map Tile Servers
+### Map Tile Servers
 
 | Option | Internet required | Notes |
 |---|---|---|
@@ -139,39 +149,15 @@ python main.py
 
 **Running fully offline:** Use [OpenFreeMap](https://github.com/hyperknot/openfreemap) — a self-contained Docker OSM tile server. Once running, select **Self-hosted (localhost)** in the dropdown.
 
-> When using external tile servers, requests include the lat/lon bounding box of the area being viewed. On sensitive engagements, consider a local tile server.
+> When using external tile servers, requests include the lat/lon bounding box of the area being viewed. On sensitive engagements, use a local tile server.
 
 ---
 
 ## Case Files
 
-Each investigation is a single `.threadhunter` file — a SQLite database containing:
-
-- Case metadata (name, client, analyst, description)
-- All enriched events with GeoIP data
-- IOC watchlist
-- Analyst notes
+Each investigation is a single `.threadhunter` file — a SQLite database containing case metadata, all enriched events with GeoIP data, an IOC watchlist, and analyst notes.
 
 > ⚠️ **Case files contain PII** from audit logs. Store them on encrypted volumes and handle in accordance with your engagement data handling policy. The in-app delete function overwrites the file with zeros before removal.
-
----
-
-## File Structure
-
-```
-threadhunter/
-├── main.py                  # Entry point
-├── threadhunter.py          # Main investigation window
-├── launcher.py              # Case launcher / recent cases
-├── requirements.txt
-├── appid_lookup.csv         # M365 Application ID → Display Name mapping
-├── operations_config.yaml   # Per-operation field extraction config
-├── flags/                   # Pre-rendered country flag PNGs (253 flags)
-├── tkintermapview/          # Bundled map widget
-└── core/
-    ├── case.py              # Case model and SQLite schema
-    └── database.py          # SQLite connection wrapper
-```
 
 ---
 
@@ -194,21 +180,31 @@ UAL exports contain personal information about every user whose activity was log
 | Jurisdiction | Instrument | Key consideration |
 |---|---|---|
 | Australia | Privacy Act 1988 / APPs | Collect only what is necessary; destroy when no longer required |
-| European Union | GDPR | Data minimisation and purpose limitation apply; individuals hold access/erasure rights |
+| European Union | GDPR | Data minimisation and purpose limitation apply |
 | United Kingdom | UK GDPR / DPA 2018 | Same as EU GDPR in practice |
 | United States (healthcare) | HIPAA | UAL logs from healthcare environments may touch PHI-adjacent systems |
 | United States (finance) | SEC / FINRA | Retention obligations may conflict with data minimisation |
 
 > This is general guidance, not legal advice. Consult your firm's legal team for jurisdiction-specific obligations.
 
-### GeoLite2 licence
+---
 
-- Cannot be redistributed with ThreadHunter (MaxMind terms)
-- Requires a free MaxMind account to download
-- Runs entirely locally — no data is sent to MaxMind during use
-- Should be updated periodically for accuracy
+## File Structure
 
-If MaxMind registration is not possible, [DB-IP Lite](https://db-ip.com/db/lite.php) databases are compatible and available under Creative Commons with no registration.
+```
+threadhunter/
+├── main.py                  # Entry point
+├── threadhunter.py          # Main investigation window
+├── launcher.py              # Case launcher / recent cases
+├── requirements.txt
+├── appid_lookup.csv         # M365 Application ID → Display Name mapping
+├── operations_config.yaml   # Per-operation field extraction config
+├── flags/                   # Pre-rendered country flag PNGs (253 flags)
+├── tkintermapview/          # Bundled map widget
+└── core/
+    ├── case.py              # Case model and SQLite schema
+    └── database.py          # SQLite connection wrapper
+```
 
 ---
 
@@ -227,6 +223,32 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 - Do not attach real UAL exports or `.threadhunter` case files to issues or pull requests
 - Do not commit `*.mmdb` GeoIP databases to the repository
 
+---
+
+## Author
+
+**Yuvi Kapoor** — Senior DFIR Analyst, CyberClan (APAC)
+
+Specialising in ransomware and BEC incident response engagements.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yuvi%20Kapoor-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/yuvi-kapoor-5a38521a5)
+
+---
+
 ## Licence
 
 MIT — see [LICENSE](LICENSE)
+
+---
+
+## Disclaimer
+
+This tool is intended for use by authorised security professionals conducting legitimate incident response and forensic investigations. Ensure all M365 queries and data handling are performed in accordance with applicable laws and your organisation's policies.
+
+---
+
+<div align="center">
+
+Built for the DFIR community · CyberClan APAC
+
+</div>
