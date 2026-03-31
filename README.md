@@ -43,7 +43,10 @@ Built by [Yuvi Kapoor](https://linkedin.com/in/yuvi-kapoor-5a38521a5)
 
 ## Screenshots
 
-> _Add screenshots of the application here_
+> <img width="861" height="591" alt="image" src="https://github.com/user-attachments/assets/72d254f5-637c-43fc-a3df-f7fadd968117" />
+
+> <img width="1481" height="930" alt="image" src="https://github.com/user-attachments/assets/8e9b35f1-8f01-409c-9607-204c83093270" />
+
 
 ---
 
@@ -118,13 +121,6 @@ python main.py path/to/MyCase.threadhunter
 **Windows** — works out of the box with standard Python from [python.org](https://www.python.org/downloads/).
 
 **macOS** — install Python from [python.org](https://www.python.org/downloads/), not Homebrew. The python.org installer bundles a more reliable version of Tk. If the app opens behind other windows on first launch, click the ThreadHunter icon in the Dock.
-
-**Linux:**
-```bash
-sudo apt install python3-tk   # Ubuntu/Debian
-pip install -r requirements.txt
-python main.py
-```
 
 ### Keyboard Shortcuts
 
@@ -237,13 +233,7 @@ Specialising in ransomware and BEC incident response engagements.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE)
-
----
-
-## Disclaimer
-
-This tool is intended for use by authorised security professionals conducting legitimate incident response and forensic investigations. Ensure all M365 queries and data handling are performed in accordance with applicable laws and your organisation's policies.
+Apache 2.0 — see [LICENSE](LICENSE)
 
 ---
 
