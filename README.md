@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/0623cfa5-39f2-4605-8992-145afa502e6d" alt="ThreadHunter" width="420"/>
+<img width="1917" height="589" alt="Capture" src="https://github.com/user-attachments/assets/14ee9cb6-ab59-410a-bcda-96b72d22d3c5" />
 
 # ThreadHunter
 
@@ -20,7 +20,7 @@
 
 **ThreadHunter** is a desktop DFIR platform built for investigating Microsoft 365 Unified Audit Log data during Business Email Compromise engagements. It enriches raw UAL exports with GeoIP data, surfaces impossible travel, detects IOCs, and generates self-contained investigation reports — entirely on your local machine.
 
-Built by [Yuvi Kapoor](https://linkedin.com/in/yuvi-kapoor-5a38521a5) at **CyberClan DFIR**.
+Built by [Yuvi Kapoor](https://linkedin.com/in/yuvi-kapoor-5a38521a5) 
 
 ---
 
@@ -227,7 +227,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Author
 
-**Yuvi Kapoor** — Senior DFIR Analyst, CyberClan (APAC)
+**Yuvi Kapoor** 
 
 Specialising in ransomware and BEC incident response engagements.
 
@@ -249,6 +249,6 @@ This tool is intended for use by authorised security professionals conducting le
 
 <div align="center">
 
-Built for the DFIR community · CyberClan APAC
+Built for the DFIR community 
 
 </div>
